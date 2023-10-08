@@ -12,7 +12,18 @@ module.exports = {
     // definiuje nazwe pliku wyjsciowego
   },
   module: {
-    rules: [],
+    rules: [
+      {
+        test: /\.js$/,
+        // okreslam jakie pliki
+        //beda brane pod uwage
+        exclude: /node_modules/,
+        // okreslam wykluczenia
+        use: 'babel-loader',
+        //okreslam jaki [loader]
+        // ma być wykorzystany
+      },
+    ],
     // obecnie brak dodatkowych ustawień
   },
   plugins: [
