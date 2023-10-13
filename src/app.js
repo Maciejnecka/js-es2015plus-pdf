@@ -465,3 +465,58 @@
 
 // const polish = new Polish('Łukasz Nowak');
 // console.log(polish.getName());
+// class Square {
+//   constructor(a, b) {
+//     this.a = a;
+//     this.b = b;
+//   }
+//   getArea() {
+//     return this.a * this.b;
+//   }
+// }
+
+// class Cube extends Square {
+//   constructor(a, b, c) {
+//     super(a, b);
+//     this.c = c;
+//   }
+//   getArea() {
+//     return super.getArea() * this.c;
+//   }
+// }
+// const cube1 = new Cube(1, 2, 3);
+// console.log(cube1.getArea()); // 6
+
+// const getCurrentDate = require('./getDate.js');
+
+// const data = getCurrentDate();
+// console.log(data.getFullYear);
+
+// const Point = require('./Point.js');
+
+// const p1 = new Point(1, 2);
+// console.log(p1);
+
+// const { calcSum } = require('./math.js');
+
+// const sum = calcSum(1, 2, 3, 4);
+// console.log(sum);
+
+// import getCurrentDate from './getDate';
+// // gdy import jest realizowany przez przegladarke
+// // to rozszerzenie pliku [.js] musi pozostac
+// const data = getCurrentDate();
+// console.log(data.getFullYear());
+// console.log(data.getFullYear());
+
+import Point from './Point.js';
+
+const p1 = new Point(1, 2);
+console.log(p1);
+console.log(p1);
+console.log(p1);
+
+import { calcSum as getSum } from './math.js';
+
+const sum = getSum(1, 2, 3, 4, 5);
+console.log(sum);
