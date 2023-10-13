@@ -273,20 +273,195 @@
 // console.log(person);
 // {firstName: 'Łukasz', lastName:'Nowak', weight: '82kg', height: '187cm'}
 
-const placeA = {
-  name: {
-    pl: 'Kraków',
-    la: 'Cracovia',
-    de: 'Krakau',
-  },
-  position: [50.061389, 19.938333],
-};
+// const placeA = {
+//   name: {
+//     pl: 'Kraków',
+//     la: 'Cracovia',
+//     de: 'Krakau',
+//   },
+//   position: [50.061389, 19.938333],
+// };
 
-const placeB = { ...placeA };
-// tworzymy kopie płytką
-placeB.name.pl = 'Warszawa';
-// zmieniamy wartosc dla nowego obiekktu
+// const placeB = { ...placeA };
+// // tworzymy kopie płytką
+// placeB.name.pl = 'Warszawa';
+// // zmieniamy wartosc dla nowego obiekktu
 
-console.log(placeA.name.pl);
+// console.log(placeA.name.pl);
 // Warszawa
 // Okazuje sie, ze zmodyfikowalismy tez [placeA]
+
+// const calcSum1 = function (...args) {
+//   return args.reduce((acc, num) => {
+//     return acc + num;
+//   }, 0);
+// };
+
+// const calcSum2 = (...params) => {
+//   let sum = 0;
+//   params.forEach((num) => {
+//     sum += num;
+//   });
+//   return sum;
+// };
+
+// console.log(calcSum1(1, 2, 3, 4, 5)); // 15
+// console.log(calcSum2(3, 5, 6, 7)); // 21
+
+// const assignPrice = (name, ...products) => {
+//   let price = 0;
+//   products.forEach((item) => (price += item.price));
+
+//   return {
+//     name,
+//     price,
+//     products,
+//   };
+// };
+// console.log(
+//   assignPrice(
+//     'Łukasz Nowak',
+//     { name: 'Karty', price: 20 },
+//     { name: 'książka', price: 49 }
+//   )
+// );
+
+// const arr = [1, 2, 3, 4];
+
+// const [first, ...rest] = arr;
+// console.log(first, rest);
+// // 1[2,3,4]
+
+// const obj = { name: 'Marek', weight: '66kg', height: '182cm' };
+
+// const { name, ...other } = obj;
+// console.log(name, other);
+// Marek {weight: '66kg', height: '182cm'}
+
+// const fn1 = function (a, b = 'bbb', c = 12) {
+//   console.log(a, b, c);
+// };
+
+// const fn2 = (a, b, c = 12) => {
+//   console.log(a, b, c);
+// };
+
+// fn1(); // undefined 'bbb' 12
+// fn2(47); // 47 undefined 12
+
+// const obj = { name: 'Łukasz' };
+// const { name, age = 12 } = obj;
+// console.log(name, age);
+// // Łukasz 12
+
+// const place = {
+//   name: {
+//     pl: 'Kraków',
+//     la: 'Cracovia',
+//     de: 'Krakau',
+//   },
+//   position: [50.061389, 19.938333],
+// };
+
+// const {
+//   name: { en = 'Cracow' },
+//   position: [lat = 0, lng = 0],
+// } = place;
+
+// console.log(`${en} => ${lat} ${lng}`);
+// Cracow => 50. 19.
+
+// const Car = function () {};
+// // konstruktorow nie tworzymy za pomoca funkcji strzalkowych
+
+// class Person {}
+// // nowy zapis w ES6
+
+// console.log(typeof Car, typeof Person);
+// dowod, ze to ciagle to samo
+
+// class Person {}
+
+// const person1 = new Person();
+// const person2 = new Person();
+// const person3 = new Person();
+
+// console.log(
+//   typeof person1, // object
+//   person1 === person2 // false
+// );
+
+// class Person {
+//   constructor() {
+//     this.firstName = 'Łukasz';
+//     this.lastName = 'Nowak';
+//   }
+// }
+
+// const person1 = new Person();
+// const person2 = new Person();
+// const person3 = new Person();
+
+// console.log(person1, person2, person3, person1 === person2);
+
+// class Person {
+//   constructor(firstN, lastN) {
+//     this.firstName = firstN;
+//     this.lastName = lastN;
+//   }
+// }
+
+// const person1 = new Person('Łukasz', 'Nowak');
+// const person2 = new Person('Jan', 'Kowalski');
+// const person3 = new Person('Anna', 'Polak');
+
+// console.log(person1, person2, person1 === person2);
+
+// class Person {
+//   constructor({ name, age = 0 }) {
+//     this.name = name;
+//     this.age = age;
+//   }
+// }
+
+// const person1 = new Person({ name: 'Łukasz Nowak' });
+// const person2 = new Person({ name: 'Jan Kowalski', age: 19 });
+
+// console.log(person1, person2, person1 === person2);
+
+// class Person {
+//   constructor({ name, age = 0 }) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   getName() {
+//     return this.name;
+//   }
+//   setName(name) {
+//     this.name = name;
+//   }
+// }
+
+// const person = new Person({ name: 'Łukasz Nowak' });
+// person.setName('Jan Kowalski');
+// console.log(person.getName());
+
+// class Person {
+//   constructor(name) {
+//     this.name = name;
+//     this.lang = null;
+//   }
+//   getName() {
+//     return this.name;
+//   }
+// }
+
+// class Polish extends Person {
+//   constructor(name) {
+//     super(name);
+//     this.lang = 'pl';
+//   }
+// }
+
+// const polish = new Polish('Łukasz Nowak');
+// console.log(polish.getName());
